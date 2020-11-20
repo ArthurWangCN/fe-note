@@ -1,3 +1,9 @@
+## Element UI
+### 修改el-pagination中的默认'前往'两字
+```js
+document.getElementsByClassName('el-pagination__jump')[0].childNodes[0].nodeValue = '跳至'
+```
+
 ## 工具方法
 ### JS将unicode码转中文方法
 将unicode的 `\u` 先转为 `%u`，然后使用 **unescape** 方法转换为中文:
