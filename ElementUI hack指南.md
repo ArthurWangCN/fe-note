@@ -21,3 +21,9 @@
   }
 }
 ```
+
+## 分页组件el-pagination
+### 修改el-pagination中的默认'前往'两字
+```js
+document.getElementsByClassName('el-pagination__jump')[0].childNodes[0].nodeValue = '跳至';
+```
