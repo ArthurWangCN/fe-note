@@ -27,3 +27,23 @@
 ```js
 document.getElementsByClassName('el-pagination__jump')[0].childNodes[0].nodeValue = '跳至';
 ```
+
+## 树形el-tree
+### 修改el-tree展开收起icon
+只需改相应的content，值得注意的是，用得是阿里的iconfont，所以 `font-family` 需要设为 `iconfont`：
+```css
+.el-tree-node__expand-icon.expanded {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);  /* 点击展开不旋转 */
+}
+/* 收起 */
+.el-icon-caret-right:before {
+    font-family: "iconfont";
+    content: "\e78b";
+}
+/* 展开 */
+.el-tree-node__expand-icon.expanded.el-icon-caret-right:before{
+    font-family: "iconfont";
+    content: "\e78a";
+}
+```
