@@ -1,4 +1,4 @@
-**1、style标签媒介查询**
+### 1、style标签媒介查询
 偶然在视频里看到一种媒介查询的方式：
 ```html
 <style media="(min-width: 300px) and (max-width: 500px)">
