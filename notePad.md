@@ -12,6 +12,20 @@
 ## CSS
 
 
+## Vue.js
+### style属性绑定background-image
+在css外设置background-image时，不能直接使用url，应该使用require：
+```js
+arr.forEach((item, index) => {
+  item.bgImg = require(`../../assets/images/kmap/orgchart${index%6+1}.png`);
+})
+```
+
+```html
+<div :style="{backgroundImage: 'url(' + bgImg + ')'}"></div>
+```
+
+
 ## 工具方法
 ### JS将unicode码转中文方法
 将unicode的 `\u` 先转为 `%u`，然后使用 **unescape** 方法转换为中文:
