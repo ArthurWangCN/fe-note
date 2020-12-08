@@ -1,4 +1,4 @@
-### 2、ie下隐藏滚动条IE10,IE11,IE12
+### 1、ie下隐藏滚动条IE10,IE11,IE12
 
 ```css
 .scroll_content{
