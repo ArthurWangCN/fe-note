@@ -52,3 +52,37 @@ computed: {
   }
 },
 ```
+
+### 3、路由发生变化的时候修改页面title
+结合路由的 meta 和 导航守卫来实现。
+
+router.js：
+```js
+{
+  path: '/',
+  name: 'home',
+  component: Home,
+  meta: {
+    title: "首页"
+  }
+},
+{
+  path: '/user',
+  name: 'user',
+  component: User,
+  meta: {
+    title: "用户页"
+  }
+},
+```
+
+main.js：
+```js
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化的时候修改页面title */
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
+```
