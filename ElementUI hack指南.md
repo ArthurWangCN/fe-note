@@ -74,7 +74,7 @@ loading.close();  // 加载完成时调用，关闭loading效果
 ### 加载过程中，不显示“暂无数据”
 ```html
 <el-table>
-  <template>
+  <template slot="empty">
     <p>{{ noDataText }}</p>
   </template>
   // ...
