@@ -10,7 +10,7 @@
 
 首先上代码：
 
-```vue
+```js
 <template>
 	<el-button @click="downloadUrl">导出Excel</el-button>        
 </template>
@@ -80,14 +80,24 @@ export default {
 + 在正常的导出请求之后可以看到又发了一个新的blob请求，其本质是到这个地址下载文件。
 
 常用文件对应的MIME类型：
+
  扩展名----------MIME类型
+ 
 .csv--------------text/csv
+
 .jpeg/.jpg-------image/jpeg
+
 .png-------------image/png
+
 .rar--------------application/x-rar-compressed
+
 .doc-------------application/msword
+
 .docx-----------application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
 .xls--------------application/vnd.ms-excel
+
 .xlsx------------application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
 .zip--------------application/zip
 
