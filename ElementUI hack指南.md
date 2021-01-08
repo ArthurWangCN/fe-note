@@ -9,6 +9,7 @@
 }
 ```
 
+
 ## 弹窗组件el-dialog
 ### el-dialog在IE11中打开关闭闪一下
 ```css
@@ -22,11 +23,13 @@
 }
 ```
 
+
 ## 分页组件el-pagination
 ### 修改el-pagination中的默认'前往'两字
 ```js
 document.getElementsByClassName('el-pagination__jump')[0].childNodes[0].nodeValue = '跳至';
 ```
+
 
 ## 树形el-tree
 ### 修改el-tree展开收起icon
@@ -47,3 +50,36 @@ document.getElementsByClassName('el-pagination__jump')[0].childNodes[0].nodeValu
     content: "\e78a";
 }
 ```
+
+
+## 表格el-table
+### 只给表格内容加loading(不含表头)
+开始loading：
+```js
+const loading = this.$loading({
+   lock: true,  // 同v-loading的修饰符
+   text: this.$t('tip.loading'),  // 加载文案
+   backgroundColor: 'rgba(55,55,55,0.4)', // 背景色
+   spinner: 'el-icon-loading',  // 加载图标
+   target: document.querySelector(".el-table__body")  // loading需要覆盖的DOM节点，默认为body
+})
+```
+注意最好放到 `this.$nextTick` 回调中，否则可能获取不到元素。
+
+关闭loading：
+```js
+loading.close();  // 加载完成时调用，关闭loading效果
+```
+
+### 加载过程中，不显示“暂无数据”
+```html
+<el-table>
+  <template>
+    <p>{{ noDataText }}</p>
+  </template>
+  // ...
+</el-table>
+```
+data中定义 `noDataText` 为空，加载数据成功，再根据有无数据进行赋值。
+
+
