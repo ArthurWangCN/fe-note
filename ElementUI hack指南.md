@@ -83,3 +83,15 @@ loading.close();  // 加载完成时调用，关闭loading效果
 data中定义 `noDataText` 为空，加载数据成功，再根据有无数据进行赋值。
 
 
+## 上传组件el-upload
+### 取消文件列表动画
+```css
+/deep/ .el-list-enter-active,
+/deep/ .el-list-leave-active {
+  transition: none;
+}
+/deep/ .el-list-enter,
+/deep/ .el-list-leave-active {
+  opacity: 0;
+}
+```
