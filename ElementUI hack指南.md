@@ -96,9 +96,35 @@ data中定义 `noDataText` 为空，加载数据成功，再根据有无数据�
 }
 ```
 
+### 只能上传一个，再次上传覆盖原先的
+监听 on-change 事件
+```html
+<el-upload
+  :action="actionUrl"
+  ref="bannerUpload"
+  :file-list="fileList"
+  :show-file-list="false"
+  :before-upload="beforeUpload"
+  :on-success="onUploadSucc"
+  :on-change="handleChangePic"
+  class="banner-upload"
+>
+  <span class="manage-home-btn" style="width: 120px;">上传图片</span>
+</el-upload>
+```
+
+```js
+handleChangePic(file,fileList){
+  if (fileList.length > 1) {
+    fileList.splice(0, 1);
+  }
+},
+````
+
+
 ## 文本框组件el-input
 ### 文本域（textarea）禁止拉伸样式
-```
+```css
 .el-textarea__inner{
    resize: none;
 }
