@@ -109,3 +109,19 @@ vue-cli中 scoped 的编译原理:
 </style>
 ```
 
+### 5、vue中，img标签图片加载失败后显示默认图片
+```html
+<img src="xxx.png" @error="defaultImg($event)" />
+```
+
+```js
+// 默认图片地址
+imgSrc: require("./img/defPic.png")
+
+defaultImg(event){
+	 let img = event.srcElement;
+	 img.src = this.imgSrc;
+	 img.onerror = null; //防止闪图
+ }
+```
+
