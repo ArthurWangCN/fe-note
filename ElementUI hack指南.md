@@ -129,3 +129,17 @@ handleChangePic(file,fileList){
    resize: none;
 }
 ```
+
+### 自动填充密码问题
+浏览器会默认将已保存的账号密码 填充到input type值为password的输入框内，如果在登录页面，这是期望的，但是如果在注册页面、新增账号等页面，这就是超出需求了，在type为password的input中加auto-complete="new-password"属性即可：
+```html
+<el-form-item label="密码：" prop="userPwd">
+  <el-input
+    v-model.trim="form.userPwd"
+    placeholder="请输入密码"
+    maxlength="18"
+    type="password"
+    auto-complete="new-password"
+  ></el-input>
+</el-form-item>
+```
