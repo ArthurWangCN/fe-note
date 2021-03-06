@@ -3,7 +3,7 @@
 ## 截屏
 + `command + shift + 3` 截全屏；
 + `command + shift + 4` 选取截屏；
-+ + `command + shift + 5` 选区录屏截图；
++ `command + shift + 5` 选区录屏截图；
 
 ### 修改截图默认保存路径
 执行：
