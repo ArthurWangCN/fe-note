@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随机点名</title>
+</head>
+
+<body>
+  <h1 class="name" id="names">点名</h1>
+  <input type="button" value="开始" id=start_btn>
+  <input type="button" value="结束" id=stop_btn disabled>
+  <script>
+    "../DOM/tools.js"
+  </script>
+  <script>
+    let arrName = ["肖巍", "杨恩", "张芝荣", "罗雷", "郭林杰", "小湉湉", "弯弯姐", "陈锴", "徐阳", "陈阳吉", "张胜江", "我", "波哥", "阿汤哥", "谢杰",
+      "薛老板"];
+    let names = document.querySelector("h1");
+    let start_btn = document.querySelector("#start_btn");
+    let stop_btn = document.querySelector("#stop_btn");
+    let i, timer;
+
+    function creatRandom(min, max) {
+      if (!max) {
+        [max, min] = [min, 0];
+      }
+      let number = parseInt(Math.random() * (max - min + 1) + min);
+      return number;
+    }
+    start_btn.onclick = function () {
+      stop_btn.disabled ? stop_btn.disabled = false : stop_btn.disabled = true;
+      start_btn.disabled ? start_btn.disabled = false : start_btn.disabled = true;
+      timer = setInterval(() => {
+        i = creatRandom(0, arrName.length - 1);
+        names.innerHTML = arrName[i];
+      }, 100);
+    };
+    stop_btn.onclick = function () {
+      stop_btn.disabled ? stop_btn.disabled = false : stop_btn.disabled = true;
+      start_btn.disabled ? start_btn.disabled = false : start_btn.disabled = true;
+      console.log(arrName[i]);
+      clearInterval(timer);
+      arrName.splice(i, 1);
+      if (!arrName.length) {
+        start_btn.disabled = true;
+        stop_btn.disabled = true;
+        names.innerHTML = "抽奖完毕";
+      }
+    };
+  </script>
+</body>
