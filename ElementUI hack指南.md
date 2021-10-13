@@ -143,3 +143,11 @@ handleChangePic(file,fileList){
   ></el-input>
 </el-form-item>
 ```
+
+
+## 下拉框el-select
+### 给下拉框加类名
+需要加 `popper-class` ：
+```html
+<el-select popper-class="xxx" v-model=value>
+```
