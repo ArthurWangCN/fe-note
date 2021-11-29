@@ -144,6 +144,15 @@ handleChangePic(file,fileList){
 </el-form-item>
 ```
 
+### blur 和 keyup.enter 冲突
+解决方法：使用keyup事件触发blur事件
+```js
+<el-input
+  @blur="doSomething"
+  @keyup.native.enter="$event.target.blur"
+></el-input>
+```
+
 
 ## 下拉框el-select
 ### 给下拉框加类名
